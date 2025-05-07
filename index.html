@@ -72,30 +72,42 @@
       line-height: 1.8;
       padding-right: 1em;
     }
-    .pdfs {
-      display: flex;
-      overflow-x: auto;
-      gap: 1em;
-      padding: 1em 0;
-      scroll-snap-type: x mandatory;
-    }
-    .pdf-preview {
-      position: relative;
-      width: 300px;
-      height: 402px;
-      flex: 0 0 auto;
-      scroll-snap-align: start;
-    }
-    .pdf-preview iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .pdf-preview a.overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-    }
+.pdfs {
+  display: flex;
+  overflow-x: auto; /* Allow scrolling */
+  gap: 1em;
+  padding: 1em 0;
+  scroll-snap-type: x mandatory;
+  justify-content: flex-start; /* Align images to the left */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.pdf-preview {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  max-width: 100%;
+}
+
+.pdf-preview img {
+  width: 100%;
+  height: auto;
+  max-width: 200px; /* Set maximum width for smaller images */
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .pdf-preview img {
+    max-width: 150px; /* Smaller images for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-preview img {
+    max-width: 120px; /* Even smaller images for very small screens */
+  }
+}
+
+
     .portrait {
       text-align: center;
       margin-top: 3em;
@@ -140,57 +152,66 @@
   </div>
 
   <div class="section">
-    <h2>מה בתפריט?</h2>
+    <h3>איך אני יכולה לעזור לכם?</h3>
     <ul>
       <li>ייעוץ וליווי אישי</li>
       <li>סדנאות והרצאות למוסדות, צוותים וארגונים</li>
       <li>הדרכות קבוצתיות לפיתוח מיומנויות למידה וניהול עצמי</li>
-      <li>תרגול מיינדפולנס לשיפור רווחה אישית וקוגניטיבית</li>
+      <li>תרגולי מיינדפולנס לשיפור רווחה אישית, קוגניטיבית ורגשית</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2>נושאים מרכזיים</h2>
+    <h3>מה נלמד יחד?</h3>
     <ul>
       <li>שיפור מיומנויות למידה וארגון ידע</li>
-      <li>מדיטציה ומיינדפולנס בחיי היומיום</li>
+      <li>תרגול מדיטציה ומיינדפולנס ביומיום</li>
       <li>ייעול מנגנונים קוגניטיביים: קשב, תפיסה, תפקודים ניהוליים</li>
       <li>מודעות עצמית, ארגון וניהול זמן</li>
-      <li>ייעוץ וליווי ללקויות למידה והפרעות קשב וריכוז</li>
+      <li>ייעוץ ותמיכה בהתמודדות עם לקויות למידה והפרעות קשב</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2>להזמנה ויצירת קשר</h2>
+    <h3>מוזמנים ליצור איתי קשר ולהתחיל את המסע פנימה</h3>
     <p>📞 052-817-7796</p>
     <p>📧 ranitgabriely1@gmail.com</p>
   </div>
-
-  <div class="section">
-    <h2> המלצות</h2>
-    <div class="pdfs">
-      <div class="pdf-preview">
-        <iframe src="https://ranit-mind.github.io/רנית%20-%20HIT.pdf#toolbar=0"></iframe>
-        <a class="overlay" href="https://ranit-mind.github.io/רנית%20-%20HIT.pdf" target="_blank"></a>
-      </div>
-      <div class="pdf-preview">
-        <iframe src="https://ranit-mind.github.io/רנית%20-%20מטה%20יהודה.pdf#toolbar=0"></iframe>
-        <a class="overlay" href="https://ranit-mind.github.io/רנית%20-%20מטה%20יהודה.pdf" target="_blank"></a>
-      </div>
-      <div class="pdf-preview">
-        <iframe src="https://ranit-mind.github.io/רנית%20-%20עזריאלי.pdf#toolbar=0"></iframe>
-        <a class="overlay" href="https://ranit-mind.github.io/רנית%20-%20עזריאלי.pdf" target="_blank"></a>
-      </div>
-      <div class="pdf-preview">
-        <iframe src="https://ranit-mind.github.io/רנית%20-%20רב%20תחומי.pdf#toolbar=0"></iframe>
-        <a class="overlay" href="https://ranit-mind.github.io/רנית%20-%20רב%20תחומי.pdf" target="_blank"></a>
-      </div>
-      <div class="pdf-preview">
-        <iframe src="https://ranit-mind.github.io/רנית%20-%20שלם.pdf#toolbar=0"></iframe>
-        <a class="overlay" href="https://ranit-mind.github.io/רנית%20-%20שלם.pdf" target="_blank"></a>
-      </div>
+  
+  
+<div class="section">
+  <h3>המלצות</h3>
+  <div class="pdfs">
+    <div class="pdf-preview">
+      <a href="https://ranit-mind.github.io/רנית%20-%20HIT.jpg" target="_blank">
+        <img src="https://ranit-mind.github.io/רנית%20-%20HIT.jpg" alt="המלצה מ-HIT" />
+      </a>
+    </div>
+    <div class="pdf-preview">
+      <a href="https://ranit-mind.github.io/רנית%20-%20מטה%20יהודה.jpg" target="_blank">
+        <img src="https://ranit-mind.github.io/רנית%20-%20מטה%20יהודה.jpg" alt="המלצה ממטה יהודה" />
+      </a>
+    </div>
+    <div class="pdf-preview">
+      <a href="https://ranit-mind.github.io/רנית%20-%20עזריאלי.jpg" target="_blank">
+        <img src="https://ranit-mind.github.io/רנית%20-%20עזריאלי.jpg" alt="המלצה מעזריאלי" />
+      </a>
+    </div>
+    <div class="pdf-preview">
+      <a href="https://ranit-mind.github.io/רנית%20-%20רב%20תחומי.jpg" target="_blank">
+        <img src="https://ranit-mind.github.io/רנית%20-%20רב%20תחומי.jpg" alt="המלצה מרב תחומי" />
+      </a>
+    </div>
+    <div class="pdf-preview">
+      <a href="https://ranit-mind.github.io/רנית%20-%20שלם.jpg" target="_blank">
+        <img src="https://ranit-mind.github.io/רנית%20-%20שלם.jpg" alt="המלצה משלום" />
+      </a>
     </div>
   </div>
+</div>
+
+
+
 
   <div class="portrait">
     <img src="https://ranit-mind.github.io/%D7%A8%D7%A0%D7%99%D7%AA%20%D7%AA%D7%9E%D7%95%D7%A0%D7%94.avif" alt="ד״ר רנית גבריאלי" />
